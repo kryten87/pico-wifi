@@ -23,6 +23,7 @@ I would like to develop a library to do this on a Raspberry Pi Pico W device. I'
     * once connected, enter normal operations (whatever that might be)
 
 Notes:
+
 <sup>1</sup> I need to determine how the Pico can store values in non-volatile storage (or if it can).
 
 <sup>2</sup> The prefix for this SSID name can be set at build time from configuration.
