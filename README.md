@@ -15,11 +15,11 @@ I would like to develop a library to do this on a Raspberry Pi Pico W device. I'
 2. If there is no SSID/passphrase stored in non-volatile storage<sup>1</sup>, then enter *set up* mode
     * Calculate a random SSID name which is still identifiable (eg. `My_Pico_5732`<sup>2</sup>)
     * start up a web server on a known address (192.168.0.1 perhaps<sup>3</sup>)
-    * serve a simple form which asks for SSID & passphrase. It should also have a "save" button (and possibly a "reset" button<sup>4</sup>)
-    * handle form submissions by storing SSID/passphrase and restarting the device <sup>5</sup>
+    * serve a simple HTML form<sup>4</sup> which asks for SSID & passphrase. It should also have a "save" button (and possibly a "reset" button<sup>5</sup>)
+    * handle form submissions by storing SSID/passphrase and restarting the device <sup>6</sup>
 3. If there **IS** an SSID/passphrase in storage, then
     * attempt to connect to the WiFi network
-        * after a certain number of failures, alert the user<sup>6</sup>, wait a while, and retry
+        * after a certain number of failures, alert the user<sup>7</sup>, wait a while, and retry
     * once connected, enter normal operations (whatever that might be)
 
 Notes:
@@ -30,11 +30,13 @@ Notes:
 
 <sup>3</sup> The IP address can also be configured at build time.
 
-<sup>4</sup> I'm not sure how to handle factory resets - might be better done via a hardware button.
+<sup>4</sup> Might also want to include an API endpoint (perhaps configurable at build time) for mobile apps
 
-<sup>5</sup> Also need to figure out how to reset the device in software
+<sup>5</sup> I'm not sure how to handle factory resets - might be better done via a hardware button.
 
-<sup>6</sup> Basic idea for alerting the user of error conditions: flash the onboard LED. It would be better to somehow make this configurable.
+<sup>6</sup> Also need to figure out how to reset the device in software
+
+<sup>7</sup> Basic idea for alerting the user of error conditions: flash the onboard LED. It would be better to somehow make this configurable.
 
 ## Roadmap
 
